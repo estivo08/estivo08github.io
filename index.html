@@ -4,25 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Auto-Typer Guide</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        /* Use Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for webkit browsers */
+        pre::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        pre::-webkit-scrollbar-track {
+            background: #1f2937; /* bg-gray-800 */
+        }
+        pre::-webkit-scrollbar-thumb {
+            background: #4b5563; /* bg-gray-600 */
+            border-radius: 4px;
+        }
+        pre::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 */
+        }
     </style>
+    <!-- Import Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-gray-100 p-4 sm:p-8">
+
     <div class="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-3xl mx-auto">
-        <h1 class="text-2xl sm:text-3xl font-bold text-center text-white mb-4">Mac Auto-Typer Guide</h1>
-        <p class="text-center text-gray-300 mb-8">Follow these steps to create a simple Mac app that simulates human typing in any application.</p>
         
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-white mb-4">Mac Auto-Typer Guide</h1>
+        <p class="text-center text-gray-300 mb-8">Follow these steps to run a script that simulates human typing in any application.</p>
+
+        <!-- Section 1: Get The Code -->
         <section class="mb-8">
             <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 1: Copy the AppleScript Code</h2>
+            <p class="text-gray-300 mb-4">This is the code that will do the typing. You can change the text inside the quotes to whatever you want.</p>
+            
+            <!-- Code Block -->
             <div class="bg-gray-900 rounded-lg overflow-hidden">
                 <div class="flex justify-between items-center p-3 bg-gray-700">
                     <span class="text-sm font-medium text-gray-200">AppleScript Code</span>
-                    <button id="copy-code-btn" class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-md hover:bg-blue-700 transition">Copy Code</button>
+                    <button id="copy-code-btn" class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-md hover:bg-blue-700 transition duration-200">
+                        Copy Code
+                    </button>
                 </div>
                 <pre class="p-4 overflow-x-auto"><code id="applescript-code" class="language-applescript text-sm text-gray-100">delay 3
 
@@ -33,59 +61,85 @@ set myText to "--> REPLACE THIS WITH YOUR TEXT <--"
 tell application "System Events"
 	repeat with c in characters of myText
 		keystroke c
+		-- This number controls the typing speed. 
+		-- Bigger = slower. (e.g., 0.05)
 		delay 0.01
 	end repeat
 end tell</code></pre>
             </div>
         </section>
-        
+
+        <!-- Section 2: How to Run -->
         <section class="mb-8">
-            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 2: Turn the Code into an App</h2>
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 2: Run the Code in Script Editor</h2>
             <ol class="list-decimal list-inside text-gray-300 space-y-3">
-                <li>Open the <strong class="text-white">"Script Editor"</strong> app on your Mac.</li>
+                <li>Open the <strong class="text-white">"Script Editor"</strong> app on your Mac (you can find it in Applications > Utilities).</li>
                 <li>Paste the code you just copied into the blank white window.</li>
-                <li>Click <strong class="text-white">File > Save...</strong></li>
-                <li>Give your app a name (e.g., <strong class="text-white">"Auto-Typer"</strong>).</li>
-                <li><strong class="text-red-400">Important:</strong> Change the <strong class="text-white">`File Format`</strong> to <strong class="text-white">`Application`</strong>.</li>
-                <li>Save it somewhere easy to find, like your Desktop.</li>
+                <li>Click the <strong class="text-white">Run</strong> button (it looks like a "Play" icon) in the toolbar.</li>
             </ol>
         </section>
-        
+
+        <!-- Section 3: Grant Permissions -->
         <section class="mb-8">
-            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 3: Give Your App Permission</h2>
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 3: Give Permission (First Time Only)</h2>
+            <p class="text-gray-300 mb-4">The very first time you run this, your Mac will stop it and ask for permission to control your computer. This is normal!</p>
             <ol class="list-decimal list-inside text-gray-300 space-y-3">
-                <li>Open <strong class="text-white">System Settings</strong>.</li>
-                <li>Go to <strong class="text-white">Privacy & Security > Accessibility</strong>.</li>
-                <li>Click the <strong class="text-white">`+` (plus) button</strong> (enter your password).</li>
-                <li>Find the <strong class="text-white">"Auto-Typer"</strong> app you just saved and click <strong class="text-white">Open</strong>.</li>
-                <li>Make sure the <strong class="text-white">switch next to your app is ON</strong>.</li>
+                <li>A pop-up will appear. Click <strong class="text-white">"Open System Settings"</strong>.</li>
+                <li>It will take you to <strong class="text-white">Privacy & Security > Accessibility</strong>.</li>
+                <li>Find <strong class="text-white">"Script Editor"</strong> in the list and <strong class="text-white">turn the switch ON</strong>. You may need to enter your password.</li>
+            </ol>
+        </section>
+
+        <!-- Section 4: How to Use -->
+        <section>
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 4: How to Use It</h2>
+            <ol class="list-decimal list-inside text-gray-300 space-y-3">
+                <li>Open any text field (like a Google Doc or a text file).</li>
+                <li>Click your mouse cursor exactly where you want the typing to start.</li>
+                <li>Switch back to the Script Editor app.</li>
+                <li>Click the <strong class="text-white">Run (play)</strong> button.</li>
+                <li>It will wait 3 seconds and then start typing in your other window!</li>
             </ol>
         </section>
         
-        <section>
-            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">How to Use Your New App</h2>
-            <ol class="list-decimal list-inside text-gray-300 space-y-3">
-                <li>Open any text field (like a Google Doc).</li>
-                <li>Click your mouse cursor where you want the typing to start.</li>
-                <li>Double-click your <strong class="text-white">"Auto-Typer"</strong> app.</li>
-                <li>After a 3-second delay, it will start typing!</li>
-            </ol>
-        </section>
     </div>
+
     <script>
+        // --- DOM Elements ---
         const copyBtn = document.getElementById('copy-code-btn');
         const codeBlock = document.getElementById('applescript-code');
-        copyBtn.addEventListener('click', () => {
+
+        /**
+         * Copies the AppleScript code to the clipboard.
+         */
+        function copyCodeToClipboard() {
+            // Get the text content from the code block
             const textToCopy = codeBlock.textContent;
+            
+            // We use a temporary textarea to hold the text for copying
             const tempTextArea = document.createElement('textarea');
             tempTextArea.value = textToCopy;
             document.body.appendChild(tempTextArea);
             tempTextArea.select();
-            document.execCommand('copy');
+            tempTextArea.setSelectionRange(0, 99999); // For mobile devices
+
+            try {
+                document.execCommand('copy');
+                copyBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyBtn.textContent = 'Copy Code';
+                }, 2000);
+            } catch (err) {
+                console.error('Failed to copy text: ', err);
+                copyBtn.textContent = 'Failed!';
+            }
+            
+            // Clean up the temporary textarea
             document.body.removeChild(tempTextArea);
-            copyBtn.textContent = 'Copied!';
-            setTimeout(() => { copyBtn.textContent = 'Copy Code'; }, 2000);
-        });
-    </script>
+        }
+
+        // --- Event Listeners ---
+        copyBtn.addEventListener('click', copyCodeToClipboard);
+    </I>
 </body>
 </html>

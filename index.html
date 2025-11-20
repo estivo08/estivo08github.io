@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Mac Auto-Typer Guide&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Load Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Use Inter font */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Inter', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* Custom scrollbar for webkit browsers */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>textarea::-webkit-scrollbar,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pre::-webkit-scrollbar {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>textarea::-webkit-scrollbar-track,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pre::-webkit-scrollbar-track {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #1f2937; /* bg-gray-800 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>textarea::-webkit-scrollbar-thumb,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pre::-webkit-scrollbar-thumb {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #4b5563; /* bg-gray-600 */</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>textarea::-webkit-scrollbar-thumb:hover,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>pre::-webkit-scrollbar-thumb:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: #6b7280; /* bg-gray-500 */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Import Inter font --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="bg-gray-900 text-gray-100 p-4 sm:p-8"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-3xl mx-auto"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1 class="text-2xl sm:text-3xl font-bold text-center text-white mb-4"&gt;Mac Auto-Typer Guide&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p class="text-center text-gray-300 mb-8"&gt;Follow these steps to create a simple Mac app that simulates human typing in any application (like Google Docs).&lt;/p&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section 1: Get The Code --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-xl sm:text-2xl font-semibold text-white mb-4"&gt;Step 1: Copy the AppleScript Code&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-4"&gt;This is the code for your app. The text inside the code is just a placeholder—you can change it in your Script Editor later!&lt;/p&gt;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Code Block --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bg-gray-900 rounded-lg overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex justify-between items-center p-3 bg-gray-700"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-sm font-medium text-gray-200"&gt;AppleScript Code&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button id="copy-code-btn" class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-md hover:bg-blue-700 transition duration-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>Copy Code</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;pre class="p-4 overflow-x-auto"&gt;&lt;code id="applescript-code" class="language-applescript text-sm text-gray-100"&gt;delay 3</p>
+<p class="p2"><br></p>
+<p class="p1">-- Paste your multi-line text between the quotes below:</p>
+<p class="p1">set myText to "--&gt; REPLACE THIS WITH YOUR TEXT &lt;--"</p>
+<p class="p2"><br></p>
+<p class="p1">-- This loop types out the text</p>
+<p class="p1">tell application "System Events"</p>
+<p class="p1"><span class="Apple-tab-span">	</span>repeat with c in characters of myText</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>keystroke c</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>-- This number controls the typing speed.<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>-- Bigger = slower. (e.g., 0.05)</p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>delay 0.01</p>
+<p class="p1"><span class="Apple-tab-span">	</span>end repeat</p>
+<p class="p1">end tell&lt;/code&gt;&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section 2: Create The App --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-xl sm:text-2xl font-semibold text-white mb-4"&gt;Step 2: Turn the Code into an App&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ol class="list-decimal list-inside text-gray-300 space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Open the &lt;strong class="text-white"&gt;"Script Editor"&lt;/strong&gt; app on your Mac (you can find it in Applications &gt; Utilities).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Paste the code you just copied into the blank white window.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;From the top menu bar, click &lt;strong class="text-white"&gt;File &gt; Save...&lt;/strong&gt;&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;A save window will pop up. Give your app a name (e.g., &lt;strong class="text-white"&gt;"Auto-Typer"&lt;/strong&gt;).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;&lt;strong class="text-red-400"&gt;Important:&lt;/strong&gt; Change the &lt;strong class="text-white"&gt;`File Format`&lt;/strong&gt; from `Script` to &lt;strong class="text-white"&gt;`Application`&lt;/strong&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Save it somewhere easy to find, like your Desktop.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section 3: Grant Permissions --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section class="mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-xl sm:text-2xl font-semibold text-white mb-4"&gt;Step 3: Give Your App Permission to Type&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-gray-300 mb-4"&gt;This is the most important step! You only have to do this once. You are giving your new app permission to control your computer's keyboard.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ol class="list-decimal list-inside text-gray-300 space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Open &lt;strong class="text-white"&gt;System Settings&lt;/strong&gt; on your Mac (the gear icon).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Go to &lt;strong class="text-white"&gt;Privacy &amp; Security&lt;/strong&gt; on the left side.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Scroll down and click on &lt;strong class="text-white"&gt;Accessibility&lt;/strong&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Click the &lt;strong class="text-white"&gt;`+` (plus) button&lt;/strong&gt; at the bottom (you may need to enter your password).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Find the &lt;strong class="text-white"&gt;"Auto-Typer"&lt;/strong&gt; app you just saved on your Desktop and click &lt;strong class="text-white"&gt;Open&lt;/strong&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Your app will now be in the list. &lt;strong class="text-white"&gt;Make sure the switch next to it is turned ON&lt;/strong&gt;.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- Section 4: How to Use --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="text-xl sm:text-2xl font-semibold text-white mb-4"&gt;How to Use Your New App&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;ol class="list-decimal list-inside text-gray-300 space-y-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Open any text field (like a Google Doc or a text file).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Click your mouse cursor exactly where you want the typing to start.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Find and double-click your &lt;strong class="text-white"&gt;"Auto-Typer"&lt;/strong&gt; app.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;After a 3-second delay, it will start typing all the text by itself!&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><span class="Apple-converted-space">        </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- DOM Elements ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const copyBtn = document.getElementById('copy-code-btn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const codeBlock = document.getElementById('applescript-code');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/**</p>
+<p class="p1"><span class="Apple-converted-space">         </span>* Copies the AppleScript code to the clipboard.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>*/</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function copyCodeToClipboard() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Get the text content from the code block</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const textToCopy = codeBlock.textContent;</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// We use a temporary textarea to hold the text for copying</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// This is a robust way to copy text in all browsers, including iFrames</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const tempTextArea = document.createElement('textarea');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tempTextArea.value = textToCopy;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.appendChild(tempTextArea);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tempTextArea.select();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>tempTextArea.setSelectionRange(0, 99999); // For mobile devices</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>document.execCommand('copy');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>copyBtn.textContent = 'Copied!';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>copyBtn.textContent = 'Copy Code';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 2000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error('Failed to copy text: ', err);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>copyBtn.textContent = 'Failed!';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Clean up the temporary textarea</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.body.removeChild(tempTextArea);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Event Listeners ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>copyBtn.addEventListener('click', copyCodeToClipboard);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>

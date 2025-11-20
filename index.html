@@ -60,10 +60,26 @@ set myText to "--> REPLACE THIS WITH YOUR TEXT <--"
 -- This loop types out the text
 tell application "System Events"
 	repeat with c in characters of myText
-		keystroke c
-		-- This number controls the typing speed. 
+		
+		-- Get the "ASCII code" for the character
+		set char_code to (ASCII number of c)
+		
+		-- Check for special characters
+		if char_code is 32 then
+			-- This is a SPACE. Press the spacebar (key code 49).
+			key code 49
+		else if char_code is 10 or char_code is 13 then
+			-- This is a Line Break or Return. Press the return key.
+			keystroke return
+		else
+			-- This is a normal character.
+			keystroke c
+		end if
+		
+		-- This number controls the typing speed.
 		-- Bigger = slower. (e.g., 0.05)
 		delay 0.01
+		
 	end repeat
 end tell</code></pre>
             </div>
@@ -140,6 +156,6 @@ end tell</code></pre>
 
         // --- Event Listeners ---
         copyBtn.addEventListener('click', copyCodeToClipboard);
-    </I>
+    </script>
 </body>
 </html>

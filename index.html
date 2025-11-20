@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mac Auto-Typer Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-100 p-4 sm:p-8">
+    <div class="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl w-full max-w-3xl mx-auto">
+        <h1 class="text-2xl sm:text-3xl font-bold text-center text-white mb-4">Mac Auto-Typer Guide</h1>
+        <p class="text-center text-gray-300 mb-8">Follow these steps to create a simple Mac app that simulates human typing in any application.</p>
+        
+        <section class="mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 1: Copy the AppleScript Code</h2>
+            <div class="bg-gray-900 rounded-lg overflow-hidden">
+                <div class="flex justify-between items-center p-3 bg-gray-700">
+                    <span class="text-sm font-medium text-gray-200">AppleScript Code</span>
+                    <button id="copy-code-btn" class="px-3 py-1 bg-blue-600 text-white text-xs font-bold rounded-md hover:bg-blue-700 transition">Copy Code</button>
+                </div>
+                <pre class="p-4 overflow-x-auto"><code id="applescript-code" class="language-applescript text-sm text-gray-100">delay 3
+
+-- Paste your multi-line text between the quotes below:
+set myText to "--> REPLACE THIS WITH YOUR TEXT <--"
+
+-- This loop types out the text
+tell application "System Events"
+	repeat with c in characters of myText
+		keystroke c
+		delay 0.01
+	end repeat
+end tell</code></pre>
+            </div>
+        </section>
+        
+        <section class="mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 2: Turn the Code into an App</h2>
+            <ol class="list-decimal list-inside text-gray-300 space-y-3">
+                <li>Open the <strong class="text-white">"Script Editor"</strong> app on your Mac.</li>
+                <li>Paste the code you just copied into the blank white window.</li>
+                <li>Click <strong class="text-white">File > Save...</strong></li>
+                <li>Give your app a name (e.g., <strong class="text-white">"Auto-Typer"</strong>).</li>
+                <li><strong class="text-red-400">Important:</strong> Change the <strong class="text-white">`File Format`</strong> to <strong class="text-white">`Application`</strong>.</li>
+                <li>Save it somewhere easy to find, like your Desktop.</li>
+            </ol>
+        </section>
+        
+        <section class="mb-8">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">Step 3: Give Your App Permission</h2>
+            <ol class="list-decimal list-inside text-gray-300 space-y-3">
+                <li>Open <strong class="text-white">System Settings</strong>.</li>
+                <li>Go to <strong class="text-white">Privacy & Security > Accessibility</strong>.</li>
+                <li>Click the <strong class="text-white">`+` (plus) button</strong> (enter your password).</li>
+                <li>Find the <strong class="text-white">"Auto-Typer"</strong> app you just saved and click <strong class="text-white">Open</strong>.</li>
+                <li>Make sure the <strong class="text-white">switch next to your app is ON</strong>.</li>
+            </ol>
+        </section>
+        
+        <section>
+            <h2 class="text-xl sm:text-2xl font-semibold text-white mb-4">How to Use Your New App</h2>
+            <ol class="list-decimal list-inside text-gray-300 space-y-3">
+                <li>Open any text field (like a Google Doc).</li>
+                <li>Click your mouse cursor where you want the typing to start.</li>
+                <li>Double-click your <strong class="text-white">"Auto-Typer"</strong> app.</li>
+                <li>After a 3-second delay, it will start typing!</li>
+            </ol>
+        </section>
+    </div>
+    <script>
+        const copyBtn = document.getElementById('copy-code-btn');
+        const codeBlock = document.getElementById('applescript-code');
+        copyBtn.addEventListener('click', () => {
+            const textToCopy = codeBlock.textContent;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = 'Copy Code'; }, 2000);
+        });
+    </script>
+</body>
+</html>
